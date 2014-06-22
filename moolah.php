@@ -19,9 +19,9 @@ class Tx {
         if($amount == '' || !isset($amount) || $amount === false) { return false; }
         if($product == '' || !isset($product) || $product === false) { return false; }
         if($ipn !== false && $this->_apiSecret === false) { return false; }
-        if(!$this->isValidCoin($coin)) { echo 'invalid coin'; return false; }
-        if(!$this->isValidCurrency($currency)) { echo 'invalid cur'; return false; }
-        if(floatval(number_format($amount, 8, '.', '')) <= floatval(0)) { echo 'float'; return false; }
+        if(!$this->isValidCoin($coin)) { return false; }
+        if(!$this->isValidCurrency($currency)) { return false; }
+        if(floatval(number_format($amount, 8, '.', '')) <= floatval(0)) { return false; }
 
         $action = '/private/merchant/create';
 
