@@ -130,6 +130,8 @@ class Tx {
             'nautiluscoin',
             'peercoin',
             'quarkcoin',
+            'razorcoin',
+            'vericoin',
             'vertcoin',
             'zetacoin'
         );
