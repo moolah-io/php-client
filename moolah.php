@@ -29,7 +29,7 @@ class Tx {
             'coin' => $coin,
             'currency' => $currency,
             'amount' => floatval(number_format($amount, 8, '.', '')),
-            'product' => urlencode($product)
+            'product' => $product
         );
 
         if($ipn !== false) {
