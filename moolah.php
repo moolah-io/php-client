@@ -113,7 +113,7 @@ class Tx {
         }
     }
 
-    public function isValidCoin($coin)
+    public function getValidCoins()
     {
         $coins = array(
             'bitcoin',
@@ -133,8 +133,15 @@ class Tx {
             'razorcoin',
             'vericoin',
             'vertcoin',
-            'zetacoin'
+            'zetacoin',
         );
+
+        return $coins;
+    }
+
+    public function isValidCoin($coin)
+    {
+        $coins = $this->getValidCoins();
 
         if(!in_array($coin, $coins)) {
             return false;
@@ -143,7 +150,7 @@ class Tx {
         }
     }
 
-    public function isValidCurrency($currency)
+    public function getValidCurrencies()
     {
         $currencies = array(
             'AUD',
@@ -160,8 +167,15 @@ class Tx {
             'SEK',
             'SGD',
             'USD',
-            'ZAR'
+            'ZAR',
         );
+
+        return $currencies;
+    }
+
+    public function isValidCurrency($currency)
+    {
+        $currencies = $this->getValidCurrencies();
 
         if(!in_array(strtoupper($currency), $currencies)) {
             return false;
@@ -171,4 +185,3 @@ class Tx {
     }
 
 }
-?>
